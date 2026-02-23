@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   test-and-allure:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       APP_BASE_URL: http://127.0.0.1:5501
 
@@ -37,35 +37,46 @@ jobs:
         run: npm ci
 
       - name: Start web app server
-        shell: bash
+        shell: pwsh
         run: |
-          APP_DIR="$(find "$GITHUB_WORKSPACE" \
-            \( -path "$GITHUB_WORKSPACE/.git" -o -path "$GITHUB_WORKSPACE/node_modules" -o -path "$GITHUB_WORKSPACE/minitest/target" \) -prune \
-            -o -type f -name "index.html" -print | head -n 1 | xargs -r dirname)"
+          $root = $env:GITHUB_WORKSPACE
+          $index = Get-ChildItem -Path $root -Recurse -File -Filter index.html |
+            Where-Object {
+              $_.FullName -notmatch '\\\.git\\' -and
+              $_.FullName -notmatch '\\node_modules\\' -and
+              $_.FullName -notmatch '\\minitest\\target\\' -and
+              $_.FullName -notmatch '\\minitest\\allure-report\\'
+            } |
+            Select-Object -First 1
 
-          if [ -z "$APP_DIR" ]; then
-            echo "::error::index.html not found in repository. Add your web app files so UI tests can run in CI."
+          if (-not $index) {
+            Write-Error "index.html not found in repository. Add your web app files so UI tests can run in CI."
             exit 1
-          fi
+          }
 
-          echo "Serving app from: $APP_DIR"
-          nohup python3 -m http.server 5501 --bind 127.0.0.1 --directory "$APP_DIR" > /tmp/web-server.log 2>&1 &
+          $appDir = $index.DirectoryName
+          Write-Host "Serving app from: $appDir"
+          Start-Process python -ArgumentList "-m http.server 5501 --bind 127.0.0.1 --directory `"$appDir`"" -WindowStyle Hidden
 
-          for i in {1..30}; do
-            if curl -fsS "${APP_BASE_URL}/index.html" > /dev/null; then
-              echo "Web server is ready at ${APP_BASE_URL}"
-              exit 0
-            fi
-            sleep 1
-          done
+          $ok = $false
+          for ($i = 0; $i -lt 40; $i++) {
+            try {
+              Invoke-WebRequest -Uri "$env:APP_BASE_URL/index.html" -UseBasicParsing | Out-Null
+              $ok = $true
+              break
+            } catch {
+              Start-Sleep -Seconds 1
+            }
+          }
 
-          echo "::error::Web server did not become ready."
-          cat /tmp/web-server.log || true
-          exit 1
+          if (-not $ok) {
+            Write-Error "Web server did not become ready at $env:APP_BASE_URL."
+            exit 1
+          }
 
       - name: Run TestNG tests
         working-directory: minitest
-        run: xvfb-run -a mvn -B clean test
+        run: mvn -B clean test
 
       - name: Upload Allure raw results
         if: always()
@@ -78,16 +89,15 @@ jobs:
 
       - name: Build Allure report
         if: always()
-        shell: bash
+        shell: pwsh
         run: |
-          if [ -d "minitest/target/allure-results" ] && [ "$(ls -A minitest/target/allure-results 2>/dev/null)" ]; then
-            npx allure generate minitest/target/allure-results --clean -o allure-report
-          else
-            mkdir -p allure-report
-            cat > allure-report/index.html <<'HTML'
-            <html><body><h2>No Allure results were generated.</h2></body></html>
-            HTML
-          fi
+          $resultsPath = "minitest/target/allure-results"
+          if (Test-Path $resultsPath -PathType Container -and (Get-ChildItem -Path $resultsPath | Measure-Object).Count -gt 0) {
+            npx allure generate $resultsPath --clean -o allure-report
+          } else {
+            New-Item -ItemType Directory -Path allure-report -Force | Out-Null
+            Set-Content -Path allure-report/index.html -Value "<html><body><h2>No Allure results were generated.</h2></body></html>"
+          }
 
       - name: Upload generated Allure report
         if: always()
