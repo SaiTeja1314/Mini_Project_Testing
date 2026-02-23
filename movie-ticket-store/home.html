@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse movies - Movie Ticket Store">
+  <meta name="theme-color" content="#0d0d12">
+  <title>Home | Movie Ticket Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a href="home.html" class="nav-logo">Movie Ticket Store</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="cart.html">Cart <span class="nav-cart-count" id="nav-cart-count" aria-hidden="true">0</span></a>
+        <a href="orders.html">Orders</a>
+        <a href="index.html" id="nav-logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <section class="hero">
+        <h1>Movies Store</h1>
+        <p>Pick your next movie night</p>
+      </section>
+      <div class="search-wrap">
+        <label for="search-movies" class="sr-only">Search movies by name</label>
+        <input type="search" id="search-movies" class="search-bar" placeholder="Search movies..." autocomplete="off" aria-label="Search movies by name">
+      </div>
+      <div id="movie-grid" class="movie-grid" role="list"></div>
+    </div>
+  </main>
+  <script src="js/storage.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/home.js" defer></script>
+</body>
+</html>

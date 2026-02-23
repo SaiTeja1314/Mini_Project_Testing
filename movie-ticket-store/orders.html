@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order history - Movie Ticket Store">
+  <meta name="theme-color" content="#0d0d12">
+  <title>Orders | Movie Ticket Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a href="home.html" class="nav-logo">Movie Ticket Store</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="cart.html">Cart <span class="nav-cart-count" id="nav-cart-count" aria-hidden="true">0</span></a>
+        <a href="orders.html">Orders</a>
+        <a href="index.html" id="nav-logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page orders-page">
+    <div class="container">
+      <h1>Order History</h1>
+      <div id="orders-list"></div>
+      <div id="orders-empty" class="orders-empty" style="display:none;">No orders yet. <a href="home.html">Browse movies</a></div>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/storage.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/orders.js" defer></script>
+</body>
+</html>
