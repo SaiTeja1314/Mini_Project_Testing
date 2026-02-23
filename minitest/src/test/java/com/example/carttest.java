@@ -19,7 +19,7 @@ public class carttest {
 
     WebDriver driver;
     WebDriverWait wait;
-    String indexUrl = "http://127.0.0.1:5500/index.html";
+    String indexUrl = "http://127.0.0.1:5501/index.html";
 
     @BeforeClass
     public void setup() {
@@ -86,7 +86,7 @@ public class carttest {
             );
         } catch (Exception e) {
             // If still on index, force navigation
-            driver.get("http://127.0.0.1:5500/home.html");
+            driver.get("http://127.0.0.1:5501/home.html");
         }
     }
 

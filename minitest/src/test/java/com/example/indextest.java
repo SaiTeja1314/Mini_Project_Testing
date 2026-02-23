@@ -18,7 +18,7 @@ public class indextest {
 
     WebDriver driver;
     WebDriverWait wait;
-    String baseUrl = "http://127.0.0.1:5500/index.html";
+    String baseUrl = "http://127.0.0.1:5501/index.html";
 
     @BeforeClass
     public void setup() {

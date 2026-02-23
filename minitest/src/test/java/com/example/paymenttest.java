@@ -22,7 +22,7 @@ public class paymenttest {
     WebDriver driver;
     WebDriverWait wait;
 
-    String baseUrl = "http://127.0.0.1:5500";
+    String baseUrl = "http://127.0.0.1:5501";
     String loginUrl = baseUrl + "/index.html";
     String paymentUrl = baseUrl + "/payment.html";
     String testUserEmail = "testuser@example.com";
