@@ -80,7 +80,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: minitest/target/allure-results
+          path: |
+            minitest/target/allure-results
+            minitest/allure-results
           if-no-files-found: warn
           retention-days: 14
 
@@ -88,15 +90,25 @@ jobs:
         if: always()
         shell: pwsh
         run: |
-          $resultsPath = "minitest/target/allure-results"
-          if (Test-Path $resultsPath -PathType Container) {
-            $hasFiles = (Get-ChildItem -Path $resultsPath -File -ErrorAction SilentlyContinue | Measure-Object).Count -gt 0
-            if ($hasFiles) {
-              npx allure generate $resultsPath --clean -o allure-report
-            } else {
-              New-Item -ItemType Directory -Path allure-report -Force | Out-Null
-              Set-Content -Path allure-report/index.html -Value "<html><body><h2>No Allure results were generated.</h2></body></html>"
+          $candidatePaths = @(
+            "minitest/target/allure-results",
+            "minitest/allure-results"
+          )
+
+          $resultsPath = $null
+          foreach ($path in $candidatePaths) {
+            if (Test-Path $path -PathType Container) {
+              $hasFiles = (Get-ChildItem -Path $path -File -ErrorAction SilentlyContinue | Measure-Object).Count -gt 0
+              if ($hasFiles) {
+                $resultsPath = $path
+                break
+              }
             }
+          }
+
+          if ($resultsPath) {
+            Write-Host "Generating Allure report from: $resultsPath"
+            npx allure generate $resultsPath --clean -o allure-report
           } else {
             New-Item -ItemType Directory -Path allure-report -Force | Out-Null
             Set-Content -Path allure-report/index.html -Value "<html><body><h2>No Allure results were generated.</h2></body></html>"
