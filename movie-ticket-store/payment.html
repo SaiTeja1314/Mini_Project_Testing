@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Payment - Movie Ticket Store">
+  <meta name="theme-color" content="#0d0d12">
+  <title>Payment | Movie Ticket Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a href="home.html" class="nav-logo">Movie Ticket Store</a>
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="cart.html">Cart <span class="nav-cart-count" id="nav-cart-count" aria-hidden="true">0</span></a>
+        <a href="orders.html">Orders</a>
+        <a href="index.html" id="nav-logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page payment-page">
+    <div class="container">
+      <h1>Payment</h1>
+      <div id="order-summary" class="cart-total-box mt-2" style="max-width: 480px; margin-bottom: 1.5rem;"></div>
+      <form id="payment-form" class="payment-form" aria-label="Payment details">
+        <h2 style="font-size: 1.15rem; margin: 0 0 1rem;">Card details</h2>
+        <div class="form-group">
+          <label for="card-name">Name on card</label>
+          <input type="text" id="card-name" class="form-control" required placeholder="John Doe" autocomplete="cc-name">
+        </div>
+        <div class="form-group">
+          <label for="card-number">Card number</label>
+          <input type="text" id="card-number" class="form-control" required placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric" autocomplete="cc-number">
+          <p id="card-number-err" class="error-msg" hidden></p>
+        </div>
+        <div class="payment-row">
+          <div class="form-group">
+            <label for="card-expiry">Expiry (MM/YY)</label>
+            <input type="text" id="card-expiry" class="form-control" required placeholder="MM/YY" maxlength="5" autocomplete="cc-exp">
+            <p id="card-expiry-err" class="error-msg" hidden></p>
+          </div>
+          <div class="form-group">
+            <label for="card-cvv">CVV</label>
+            <input type="text" id="card-cvv" class="form-control" required placeholder="123" maxlength="4" inputmode="numeric" autocomplete="cc-csc">
+            <p id="card-cvv-err" class="error-msg" hidden></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="billing-address">Billing address (optional)</label>
+          <input type="text" id="billing-address" class="form-control" placeholder="Street, City, ZIP" autocomplete="street-address">
+        </div>
+        <p id="payment-err" class="error-msg" aria-live="polite" hidden></p>
+        <button type="submit" class="btn btn-primary" id="pay-btn">Pay now</button>
+      </form>
+    </div>
+  </main>
+  <script src="js/storage.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/payment.js" defer></script>
+</body>
+</html>
