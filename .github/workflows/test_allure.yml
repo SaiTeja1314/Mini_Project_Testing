@@ -108,7 +108,10 @@ jobs:
 
           if ($resultsPath) {
             Write-Host "Generating Allure report from: $resultsPath"
-            npx allure generate $resultsPath --clean -o allure-report
+            if (Test-Path "allure-report") {
+              Remove-Item -Path "allure-report" -Recurse -Force
+            }
+            npx allure generate $resultsPath -o allure-report
           } else {
             New-Item -ItemType Directory -Path allure-report -Force | Out-Null
             Set-Content -Path allure-report/index.html -Value "<html><body><h2>No Allure results were generated.</h2></body></html>"
