@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="TestSuite" time="240.464" tests="65" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\SaiTejaN\Desktop\Test\minitest\target\test-classes;C:\Users\SaiTejaN\Desktop\Test\minitest\target\classes;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-java\4.40.0\selenium-java-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-api\4.40.0\selenium-api-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.40.0\selenium-chrome-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.40.0\selenium-chromium-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-json\4.40.0\selenium-json-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.40.0\selenium-manager-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v142\4.40.0\selenium-devtools-v142-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v143\4.40.0\selenium-devtools-v143-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v144\4.40.0\selenium-devtools-v144-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.40.0\selenium-edge-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.40.0\selenium-firefox-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-http\4.40.0\selenium-http-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.40.0\selenium-ie-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.40.0\selenium-remote-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\com\google\guava\guava\33.5.0-jre\guava-33.5.0-jre.jar;C:\Users\SaiTejaN\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\SaiTejaN\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\SaiTejaN\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\SaiTejaN\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-api\1.58.0\opentelemetry-api-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-context\1.58.0\opentelemetry-context-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-common\1.58.0\opentelemetry-common-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.58.0\opentelemetry-exporter-logging-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.58.0\opentelemetry-sdk-common-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.58.0\opentelemetry-sdk-extension-autoconfigure-spi-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.58.0\opentelemetry-sdk-extension-autoconfigure-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.58.0\opentelemetry-sdk-trace-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.58.0\opentelemetry-sdk-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.58.0\opentelemetry-sdk-metrics-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.58.0\opentelemetry-sdk-logs-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\net\bytebuddy\byte-buddy\1.18.4\byte-buddy-1.18.4.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-os\4.40.0\selenium-os-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.40.0\selenium-safari-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-support\4.40.0\selenium-support-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\SaiTejaN\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\SaiTejaN\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\SaiTejaN\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\SaiTejaN\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-testng\2.27.0\allure-testng-2.27.0.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-java-commons\2.27.0\allure-java-commons-2.27.0.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-model\2.27.0\allure-model-2.27.0.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-test-filter\2.27.0\allure-test-filter-2.27.0.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin"/>
+    <property name="sun.java.command" value="C:\Users\SaiTejaN\AppData\Local\Temp\surefire12722116558512015466\surefirebooter-20260223094443971_3.jar C:\Users\SaiTejaN\AppData\Local\Temp\surefire12722116558512015466 2026-02-23T09-44-43_893-jvmRun1 surefire-20260223094443971_1tmp surefire_0-20260223094443971_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\SaiTejaN\Desktop\Test\minitest\target\test-classes;C:\Users\SaiTejaN\Desktop\Test\minitest\target\classes;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-java\4.40.0\selenium-java-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-api\4.40.0\selenium-api-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.40.0\selenium-chrome-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.40.0\selenium-chromium-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-json\4.40.0\selenium-json-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.40.0\selenium-manager-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v142\4.40.0\selenium-devtools-v142-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v143\4.40.0\selenium-devtools-v143-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v144\4.40.0\selenium-devtools-v144-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.40.0\selenium-edge-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.40.0\selenium-firefox-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-http\4.40.0\selenium-http-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.40.0\selenium-ie-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.40.0\selenium-remote-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\com\google\guava\guava\33.5.0-jre\guava-33.5.0-jre.jar;C:\Users\SaiTejaN\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\SaiTejaN\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\SaiTejaN\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\SaiTejaN\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-api\1.58.0\opentelemetry-api-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-context\1.58.0\opentelemetry-context-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-common\1.58.0\opentelemetry-common-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.58.0\opentelemetry-exporter-logging-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.58.0\opentelemetry-sdk-common-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.58.0\opentelemetry-sdk-extension-autoconfigure-spi-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.58.0\opentelemetry-sdk-extension-autoconfigure-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.58.0\opentelemetry-sdk-trace-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.58.0\opentelemetry-sdk-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.58.0\opentelemetry-sdk-metrics-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.58.0\opentelemetry-sdk-logs-1.58.0.jar;C:\Users\SaiTejaN\.m2\repository\net\bytebuddy\byte-buddy\1.18.4\byte-buddy-1.18.4.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-os\4.40.0\selenium-os-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.40.0\selenium-safari-driver-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\seleniumhq\selenium\selenium-support\4.40.0\selenium-support-4.40.0.jar;C:\Users\SaiTejaN\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\SaiTejaN\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\SaiTejaN\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\SaiTejaN\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\SaiTejaN\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-testng\2.27.0\allure-testng-2.27.0.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-java-commons\2.27.0\allure-java-commons-2.27.0.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-model\2.27.0\allure-model-2.27.0.jar;C:\Users\SaiTejaN\.m2\repository\io\qameta\allure\allure-test-filter\2.27.0\allure-test-filter-2.27.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\SaiTejaN"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\SaiTejaN\Desktop\Test\minitest"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\SaiTejaN\AppData\Local\Temp\surefire12722116558512015466\surefirebooter-20260223094443971_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.10+8-LTS-217"/>
+    <property name="user.name" value="SaiTejaN"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\SaiTejaN\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\SaiTejaN\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.10"/>
+    <property name="user.dir" value="C:\Users\SaiTejaN\Desktop\Test\minitest"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-21.0.10\bin;C:\Users\SaiTejaN\Downloads\apache-maven-3.9.12-bin\apache-maven-3.9.12;C:\Program Files\nodejs\;C:\Users\SaiTejaN\AppData\Local\Microsoft\WindowsApps;C:\Users\SaiTejaN\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\SaiTejaN\Downloads\apache-maven-3.9.12-bin\apache-maven-3.9.12\bin;C:\Users\SaiTejaN\AppData\Roaming\npm;c:\Users\SaiTejaN\.vscode\extensions\vscjava.vscode-java-debug-0.58.5\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.10+8-LTS-217"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="verifyLoginTabDefault" classname="com.example.indextest" time="0.109">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+    <system-err><![CDATA[[main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+[main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+[main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+Feb 23, 2026 9:44:45 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
+]]></system-err>
+  </testcase>
+  <testcase name="verifySignupTabSwitch" classname="com.example.indextest" time="0.118">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifyLoginEmptyFields" classname="com.example.indextest" time="0.218">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifySuccessfulSignup" classname="com.example.indextest" time="0.271">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifySuccessfulLogin" classname="com.example.indextest" time="0.276">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifyIndexPageTitle" classname="com.example.indextest" time="0.011">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifyLoginFieldsTypeAndRequired" classname="com.example.indextest" time="0.055">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifySignupFieldsTypeAndRequired" classname="com.example.indextest" time="0.107">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifySwitchBackToLoginTab" classname="com.example.indextest" time="0.152">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifyLoginSubmitButtonPresent" classname="com.example.indextest" time="0.036">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifySignupSubmitButtonPresent" classname="com.example.indextest" time="0.11">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifyLoginTabButtonIsDisplayed" classname="com.example.indextest" time="0.018">
+    <system-out><![CDATA[Loaded URL: http://127.0.0.1:5500/index.html
+Title: Login | Movie Ticket Store
+]]></system-out>
+  </testcase>
+  <testcase name="verifyHomePageTitle" classname="com.example.hometest" time="9.251">
+    <system-err><![CDATA[Feb 23, 2026 9:44:49 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
+]]></system-err>
+  </testcase>
+  <testcase name="verifyNavigationLinksVisible" classname="com.example.hometest" time="5.48"/>
+  <testcase name="verifySearchBarPresent" classname="com.example.hometest" time="5.413"/>
+  <testcase name="verifyMovieGridVisible" classname="com.example.hometest" time="5.438"/>
+  <testcase name="verifyCartCountVisible" classname="com.example.hometest" time="5.433"/>
+  <testcase name="verifyLogoutRedirectsToIndex" classname="com.example.hometest" time="5.535"/>
+  <testcase name="verifyMovieDetailsPageTitle" classname="com.example.moviedetailstest" time="0.502">
+    <system-err><![CDATA[Feb 23, 2026 9:45:32 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
+]]></system-err>
+  </testcase>
+  <testcase name="verifyNavigationLinksVisible" classname="com.example.moviedetailstest" time="0.093"/>
+  <testcase name="verifyDetailContentVisibleForValidMovieId" classname="com.example.moviedetailstest" time="0.091"/>
+  <testcase name="verifyMovieTitleIsDisplayed" classname="com.example.moviedetailstest" time="0.097"/>
+  <testcase name="verifyMoviePosterImageLoaded" classname="com.example.moviedetailstest" time="0.073"/>
+  <testcase name="verifyMoviePriceFormat" classname="com.example.moviedetailstest" time="0.109"/>
+  <testcase name="verifyAddToCartButtonVisibleAndEnabled" classname="com.example.moviedetailstest" time="0.072"/>
+  <testcase name="verifyBackToHomeLinkPresent" classname="com.example.moviedetailstest" time="0.071"/>
+  <testcase name="verifyAddToCartUpdatesNavbarCountAndShowsToast" classname="com.example.moviedetailstest" time="0.199"/>
+  <testcase name="verifyAddToCartPersistsCartItemInLocalStorage" classname="com.example.moviedetailstest" time="0.118"/>
+  <testcase name="verifyInvalidMovieIdShowsNotFoundMessage" classname="com.example.moviedetailstest" time="0.069"/>
+  <testcase name="verifyMissingMovieIdShowsNotFoundMessage" classname="com.example.moviedetailstest" time="0.068"/>
+  <testcase name="verifyCartPageTitle" classname="com.example.carttest" time="0.006">
+    <system-err><![CDATA[Feb 23, 2026 9:45:36 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
+]]></system-err>
+  </testcase>
+  <testcase name="verifyCartUrlContainsCartHtml" classname="com.example.carttest" time="0.011"/>
+  <testcase name="verifyCartHeadingVisible" classname="com.example.carttest" time="0.03"/>
+  <testcase name="verifyNavigationLinksVisibleOnCartPage" classname="com.example.carttest" time="0.048"/>
+  <testcase name="verifyCartContainerVisible" classname="com.example.carttest" time="0.027"/>
+  <testcase name="verifyCartItemsAreaOrEmptyStateVisible" classname="com.example.carttest" time="0.055"/>
+  <testcase name="verifyQuantityControlsWhenItemsExist" classname="com.example.carttest" time="0.032"/>
+  <testcase name="verifyPriceOrSubtotalVisibleForItems" classname="com.example.carttest" time="0.03"/>
+  <testcase name="verifyTotalSectionVisible" classname="com.example.carttest" time="0.031"/>
+  <testcase name="verifyCheckoutButtonPresence" classname="com.example.carttest" time="0.044"/>
+  <testcase name="verifyLogoutRedirectFromCart" classname="com.example.carttest" time="0.115"/>
+  <testcase name="verifyOrdersPageTitle" classname="com.example.ordertest" time="0.105">
+    <system-err><![CDATA[Feb 23, 2026 9:48:34 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
+]]></system-err>
+  </testcase>
+  <testcase name="verifyOrdersUrlContainsOrdersHtml" classname="com.example.ordertest" time="0.06"/>
+  <testcase name="verifyNavigationLinksVisible" classname="com.example.ordertest" time="0.088"/>
+  <testcase name="verifyOrdersHeadingVisible" classname="com.example.ordertest" time="0.075"/>
+  <testcase name="verifyOrdersListContainerPresent" classname="com.example.ordertest" time="0.052"/>
+  <testcase name="verifyEmptyStateVisibleWhenNoOrders" classname="com.example.ordertest" time="0.067"/>
+  <testcase name="verifyEmptyStateHasBrowseMoviesLink" classname="com.example.ordertest" time="0.08"/>
+  <testcase name="verifyOrderCardVisibleWhenOrdersExist" classname="com.example.ordertest" time="0.085"/>
+  <testcase name="verifyOrderCardShowsIdDateAndTotal" classname="com.example.ordertest" time="0.128"/>
+  <testcase name="verifyOrderItemLineIsRendered" classname="com.example.ordertest" time="0.067"/>
+  <testcase name="verifySuccessToastShownWhenSuccessQueryPresent" classname="com.example.ordertest" time="0.085"/>
+  <testcase name="verifyNavCartCountUpdatesFromStoredCart" classname="com.example.ordertest" time="0.073"/>
+  <testcase name="verifyRedirectToCartWhenCartIsEmpty" classname="com.example.paymenttest" time="0.119">
+    <system-err><![CDATA[Feb 23, 2026 9:48:37 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 145, returning the closest version; found: 144; Please update to a Selenium version that supports CDP version 145
+]]></system-err>
+  </testcase>
+  <testcase name="verifyPaymentPageTitle" classname="com.example.paymenttest" time="0.063"/>
+  <testcase name="verifyPaymentFormVisible" classname="com.example.paymenttest" time="0.081"/>
+  <testcase name="verifyOrderSummaryVisible" classname="com.example.paymenttest" time="0.073"/>
+  <testcase name="verifyNavLinksVisible" classname="com.example.paymenttest" time="0.099"/>
+  <testcase name="verifyCardNumberAutoFormatting" classname="com.example.paymenttest" time="0.146"/>
+  <testcase name="verifyExpiryAutoFormatting" classname="com.example.paymenttest" time="0.129"/>
+  <testcase name="verifyCvvAllowsDigitsOnly" classname="com.example.paymenttest" time="0.11"/>
+  <testcase name="verifyErrorForEmptyName" classname="com.example.paymenttest" time="1.387"/>
+  <testcase name="verifyErrorForInvalidCardNumber" classname="com.example.paymenttest" time="1.35"/>
+  <testcase name="verifyErrorForInvalidExpiry" classname="com.example.paymenttest" time="1.365"/>
+  <testcase name="verifySuccessfulPaymentRedirectsToOrdersAndClearsCart" classname="com.example.paymenttest" time="1.389"/>
+</testsuite>

@@ -1,0 +1,405 @@
+<html>
+<head>
+<title>TestNG:  Auth Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Auth Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>65/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Feb 23 09:44:44 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>239 seconds (239978 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.example.indextest.verifySwitchBackToLoginTab()'><b>verifySwitchBackToLoginTab</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.hometest.verifyHomePageTitle()'><b>verifyHomePageTitle</b><br>Test class: com.example.hometest</td>
+<td></td>
+<td>9</td>
+<td>com.example.hometest@6f01b95f</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyMoviePosterImageLoaded()'><b>verifyMoviePosterImageLoaded</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyOrdersListContainerPresent()'><b>verifyOrdersListContainerPresent</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyOrderSummaryVisible()'><b>verifyOrderSummaryVisible</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.hometest.verifyCartCountVisible()'><b>verifyCartCountVisible</b><br>Test class: com.example.hometest</td>
+<td></td>
+<td>5</td>
+<td>com.example.hometest@6f01b95f</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyMoviePriceFormat()'><b>verifyMoviePriceFormat</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.carttest.verifyCartHeadingVisible()'><b>verifyCartHeadingVisible</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.carttest.verifyCartUrlContainsCartHtml()'><b>verifyCartUrlContainsCartHtml</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyOrderItemLineIsRendered()'><b>verifyOrderItemLineIsRendered</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifySuccessfulPaymentRedirectsToOrdersAndClearsCart()'><b>verifySuccessfulPaymentRedirectsToOrdersAndClearsCart</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>1</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.carttest.verifyQuantityControlsWhenItemsExist()'><b>verifyQuantityControlsWhenItemsExist</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyDetailContentVisibleForValidMovieId()'><b>verifyDetailContentVisibleForValidMovieId</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyAddToCartUpdatesNavbarCountAndShowsToast()'><b>verifyAddToCartUpdatesNavbarCountAndShowsToast</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.carttest.verifyLogoutRedirectFromCart()'><b>verifyLogoutRedirectFromCart</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.indextest.verifySignupFieldsTypeAndRequired()'><b>verifySignupFieldsTypeAndRequired</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyPaymentFormVisible()'><b>verifyPaymentFormVisible</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.hometest.verifyLogoutRedirectsToIndex()'><b>verifyLogoutRedirectsToIndex</b><br>Test class: com.example.hometest</td>
+<td></td>
+<td>5</td>
+<td>com.example.hometest@6f01b95f</td></tr>
+<tr>
+<td title='com.example.carttest.verifyCartItemsAreaOrEmptyStateVisible()'><b>verifyCartItemsAreaOrEmptyStateVisible</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.carttest.verifyNavigationLinksVisibleOnCartPage()'><b>verifyNavigationLinksVisibleOnCartPage</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.carttest.verifyCartContainerVisible()'><b>verifyCartContainerVisible</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.carttest.verifyPriceOrSubtotalVisibleForItems()'><b>verifyPriceOrSubtotalVisibleForItems</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyOrdersHeadingVisible()'><b>verifyOrdersHeadingVisible</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.indextest.verifySignupSubmitButtonPresent()'><b>verifySignupSubmitButtonPresent</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyNavigationLinksVisible()'><b>verifyNavigationLinksVisible</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyErrorForInvalidCardNumber()'><b>verifyErrorForInvalidCardNumber</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>1</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyAddToCartButtonVisibleAndEnabled()'><b>verifyAddToCartButtonVisibleAndEnabled</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyErrorForEmptyName()'><b>verifyErrorForEmptyName</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>1</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.indextest.verifySignupTabSwitch()'><b>verifySignupTabSwitch</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.hometest.verifyNavigationLinksVisible()'><b>verifyNavigationLinksVisible</b><br>Test class: com.example.hometest</td>
+<td></td>
+<td>5</td>
+<td>com.example.hometest@6f01b95f</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyOrdersPageTitle()'><b>verifyOrdersPageTitle</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyEmptyStateVisibleWhenNoOrders()'><b>verifyEmptyStateVisibleWhenNoOrders</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyOrderCardShowsIdDateAndTotal()'><b>verifyOrderCardShowsIdDateAndTotal</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyMovieDetailsPageTitle()'><b>verifyMovieDetailsPageTitle</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.indextest.verifySuccessfulSignup()'><b>verifySuccessfulSignup</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyCvvAllowsDigitsOnly()'><b>verifyCvvAllowsDigitsOnly</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyInvalidMovieIdShowsNotFoundMessage()'><b>verifyInvalidMovieIdShowsNotFoundMessage</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.carttest.verifyCheckoutButtonPresence()'><b>verifyCheckoutButtonPresence</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyExpiryAutoFormatting()'><b>verifyExpiryAutoFormatting</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.indextest.verifyLoginTabDefault()'><b>verifyLoginTabDefault</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.ordertest.verifySuccessToastShownWhenSuccessQueryPresent()'><b>verifySuccessToastShownWhenSuccessQueryPresent</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.indextest.verifyLoginEmptyFields()'><b>verifyLoginEmptyFields</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.hometest.verifySearchBarPresent()'><b>verifySearchBarPresent</b><br>Test class: com.example.hometest</td>
+<td></td>
+<td>5</td>
+<td>com.example.hometest@6f01b95f</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyBackToHomeLinkPresent()'><b>verifyBackToHomeLinkPresent</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyEmptyStateHasBrowseMoviesLink()'><b>verifyEmptyStateHasBrowseMoviesLink</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyCardNumberAutoFormatting()'><b>verifyCardNumberAutoFormatting</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyOrderCardVisibleWhenOrdersExist()'><b>verifyOrderCardVisibleWhenOrdersExist</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.indextest.verifyLoginTabButtonIsDisplayed()'><b>verifyLoginTabButtonIsDisplayed</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.indextest.verifyLoginFieldsTypeAndRequired()'><b>verifyLoginFieldsTypeAndRequired</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyNavigationLinksVisible()'><b>verifyNavigationLinksVisible</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.indextest.verifyLoginSubmitButtonPresent()'><b>verifyLoginSubmitButtonPresent</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyNavLinksVisible()'><b>verifyNavLinksVisible</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.carttest.verifyCartPageTitle()'><b>verifyCartPageTitle</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.indextest.verifySuccessfulLogin()'><b>verifySuccessfulLogin</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyPaymentPageTitle()'><b>verifyPaymentPageTitle</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.indextest.verifyIndexPageTitle()'><b>verifyIndexPageTitle</b><br>Test class: com.example.indextest</td>
+<td></td>
+<td>0</td>
+<td>com.example.indextest@4f32a3ad</td></tr>
+<tr>
+<td title='com.example.carttest.verifyTotalSectionVisible()'><b>verifyTotalSectionVisible</b><br>Test class: com.example.carttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.carttest@1a245833</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyMovieTitleIsDisplayed()'><b>verifyMovieTitleIsDisplayed</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyRedirectToCartWhenCartIsEmpty()'><b>verifyRedirectToCartWhenCartIsEmpty</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>0</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+<tr>
+<td title='com.example.hometest.verifyMovieGridVisible()'><b>verifyMovieGridVisible</b><br>Test class: com.example.hometest</td>
+<td></td>
+<td>5</td>
+<td>com.example.hometest@6f01b95f</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyOrdersUrlContainsOrdersHtml()'><b>verifyOrdersUrlContainsOrdersHtml</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyAddToCartPersistsCartItemInLocalStorage()'><b>verifyAddToCartPersistsCartItemInLocalStorage</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.moviedetailstest.verifyMissingMovieIdShowsNotFoundMessage()'><b>verifyMissingMovieIdShowsNotFoundMessage</b><br>Test class: com.example.moviedetailstest</td>
+<td></td>
+<td>0</td>
+<td>com.example.moviedetailstest@4007f65e</td></tr>
+<tr>
+<td title='com.example.ordertest.verifyNavCartCountUpdatesFromStoredCart()'><b>verifyNavCartCountUpdatesFromStoredCart</b><br>Test class: com.example.ordertest</td>
+<td></td>
+<td>0</td>
+<td>com.example.ordertest@673fdbce</td></tr>
+<tr>
+<td title='com.example.paymenttest.verifyErrorForInvalidExpiry()'><b>verifyErrorForInvalidExpiry</b><br>Test class: com.example.paymenttest</td>
+<td></td>
+<td>1</td>
+<td>com.example.paymenttest@5965d37</td></tr>
+</table><p>
+</body>
+</html>
