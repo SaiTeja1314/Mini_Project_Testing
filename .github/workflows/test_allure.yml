@@ -10,6 +10,8 @@ permissions:
 jobs:
   test-and-allure:
     runs-on: ubuntu-latest
+    env:
+      APP_BASE_URL: http://127.0.0.1:5501
 
     steps:
       - name: Checkout source
@@ -22,9 +24,48 @@ jobs:
           java-version: '17'
           cache: maven
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Set up Microsoft Edge
+        uses: browser-actions/setup-edge@v1
+
+      - name: Install Allure CLI
+        run: npm ci
+
+      - name: Start web app server
+        shell: bash
+        run: |
+          APP_DIR="$(find "$GITHUB_WORKSPACE" \
+            \( -path "$GITHUB_WORKSPACE/.git" -o -path "$GITHUB_WORKSPACE/node_modules" -o -path "$GITHUB_WORKSPACE/minitest/target" \) -prune \
+            -o -type f -name "index.html" -print | head -n 1 | xargs -r dirname)"
+
+          if [ -z "$APP_DIR" ]; then
+            echo "::error::index.html not found in repository. Add your web app files so UI tests can run in CI."
+            exit 1
+          fi
+
+          echo "Serving app from: $APP_DIR"
+          nohup python3 -m http.server 5501 --bind 127.0.0.1 --directory "$APP_DIR" > /tmp/web-server.log 2>&1 &
+
+          for i in {1..30}; do
+            if curl -fsS "${APP_BASE_URL}/index.html" > /dev/null; then
+              echo "Web server is ready at ${APP_BASE_URL}"
+              exit 0
+            fi
+            sleep 1
+          done
+
+          echo "::error::Web server did not become ready."
+          cat /tmp/web-server.log || true
+          exit 1
+
       - name: Run TestNG tests
         working-directory: minitest
-        run: mvn -B clean test
+        run: xvfb-run -a mvn -B clean test
 
       - name: Upload Allure raw results
         if: always()
@@ -35,21 +76,26 @@ jobs:
           if-no-files-found: warn
           retention-days: 14
 
-      - name: Checkout gh-pages branch
-        if: always()
-        uses: actions/checkout@v4
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
       - name: Build Allure report
         if: always()
-        uses: simple-elf/allure-report-action@v1.8
+        shell: bash
+        run: |
+          if [ -d "minitest/target/allure-results" ] && [ "$(ls -A minitest/target/allure-results 2>/dev/null)" ]; then
+            npx allure generate minitest/target/allure-results --clean -o allure-report
+          else
+            mkdir -p allure-report
+            cat > allure-report/index.html <<'HTML'
+            <html><body><h2>No Allure results were generated.</h2></body></html>
+            HTML
+          fi
+
+      - name: Upload generated Allure report
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          gh_pages: gh-pages
-          allure_history: allure-history
-          allure_results: minitest/target/allure-results
+          name: allure-report
+          path: allure-report
+          retention-days: 14
 
       - name: Publish Allure report to gh-pages
         if: always()
@@ -57,12 +103,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history
-
-      - name: Upload generated Allure report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-history
-          retention-days: 14
+          publish_dir: allure-report
+          force_orphan: true
