@@ -30,9 +30,6 @@ jobs:
           node-version: '20'
           cache: npm
 
-      - name: Set up Microsoft Edge
-        uses: browser-actions/setup-edge@v1
-
       - name: Install Allure CLI
         run: npm ci
 
@@ -92,8 +89,14 @@ jobs:
         shell: pwsh
         run: |
           $resultsPath = "minitest/target/allure-results"
-          if (Test-Path $resultsPath -PathType Container -and (Get-ChildItem -Path $resultsPath | Measure-Object).Count -gt 0) {
-            npx allure generate $resultsPath --clean -o allure-report
+          if (Test-Path $resultsPath -PathType Container) {
+            $hasFiles = (Get-ChildItem -Path $resultsPath -File -ErrorAction SilentlyContinue | Measure-Object).Count -gt 0
+            if ($hasFiles) {
+              npx allure generate $resultsPath --clean -o allure-report
+            } else {
+              New-Item -ItemType Directory -Path allure-report -Force | Out-Null
+              Set-Content -Path allure-report/index.html -Value "<html><body><h2>No Allure results were generated.</h2></body></html>"
+            }
           } else {
             New-Item -ItemType Directory -Path allure-report -Force | Out-Null
             Set-Content -Path allure-report/index.html -Value "<html><body><h2>No Allure results were generated.</h2></body></html>"
